@@ -10,7 +10,7 @@ if (!defined('DOKU_INC')) die();
 
 if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 
-class syntax_plugin_semantic extends DokuWiki_Syntax_Plugin {
+class syntax_plugin_semantic_macros extends DokuWiki_Syntax_Plugin {
 
   private $macros = array(
     '~~NewsArticle~~', '~~Article~~', '~~TechArticle~~',
