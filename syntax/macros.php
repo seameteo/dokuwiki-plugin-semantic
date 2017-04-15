@@ -23,7 +23,7 @@ class syntax_plugin_semantic_macros extends DokuWiki_Syntax_Plugin {
   function connectTo($mode) {
 
     foreach ($this->macros as $macro) {
-      $this->Lexer->addSpecialPattern($macro, $mode, 'plugin_semantic');
+      $this->Lexer->addSpecialPattern($macro, $mode, 'plugin_semantic_macros');
     }
 
   }

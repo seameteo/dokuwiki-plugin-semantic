@@ -72,6 +72,9 @@ class helper_plugin_semantic extends DokuWiki_Plugin {
   }
 
   public function getFirstImage() {
+    if (isset($this->meta['plugin']['semantic']['custom_image'])) {
+      return $this->meta['plugin']['semantic']['custom_image'];
+    }
     return ((@$this->meta['relation']['firstimage']) ? $this->meta['relation']['firstimage'] : null);
   }
 
@@ -80,6 +83,9 @@ class helper_plugin_semantic extends DokuWiki_Plugin {
   }
 
   public function getDescription() {
+    if (isset($this->meta['plugin']['semantic']['custom_description'])) {
+      return $this->meta['plugin']['semantic']['custom_description'];
+    }
     return trim(ltrim(@$this->meta['description']['abstract'], $this->getTitle()));
   }
 
