@@ -20,12 +20,16 @@ class syntax_plugin_semantic_image extends DokuWiki_Syntax_Plugin {
 
   function handle($match, $state, $pos, Doku_Handler $handler){
     // Remove markup
-    $match = substr($match, 14, -2);
+    $match = substr($match, 13, -2);
     return array($match);
   }
 
   function render($mode, Doku_Renderer $renderer, $data) {
-    $dir = $conf['mediadir'].'/'.utf8_encodeFN(str_replace(':','/',$data[0]));
+    if ($data[0] == 'NOIMAGE') {
+      $dir = '';
+    } else {
+      $dir = $conf['mediadir'].'/'.utf8_encodeFN(str_replace(':','/',$data[0]));
+    }
     if ($mode == 'metadata') {
       $renderer->meta['plugin']['semantic']['custom_image'] = $dir;
       return true;
